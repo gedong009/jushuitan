@@ -1,6 +1,6 @@
 <?php
 
-namespace zmoyi\JuShuiTan\Api\Common;
+namespace gedong\JuShuiTan\Api\Common;
 
 interface ServeHttp
 {
@@ -285,17 +285,4 @@ interface ServeHttp
      * 库存调拨上传（仓内调拨）
      */
     const UPLOAD_ALLOCATE_IN = '/open/jushuitan/allocate/in/upload';
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

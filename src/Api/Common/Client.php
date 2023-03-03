@@ -1,6 +1,6 @@
 <?php
 
-namespace zmoyi\JuShuiTan\Api\Common;
+namespace gedong\JuShuiTan\Api\Common;
 
 use GuzzleHttp\Client as Clients;
 use GuzzleHttp\Exception\RequestException;
@@ -11,12 +11,12 @@ class Client
 {
     protected static string $url;
 
-    public static function post($url, $data):array
+    public static function post($url, $data): array
     {
         return self::sendRequest($url, $data);
     }
 
-    private static function sendRequest($url, array $options):array
+    private static function sendRequest($url, array $options): array
     {
         $client = new Clients([
             'base_uri' => self::getUrl(),
@@ -33,7 +33,7 @@ class Client
             $contents = $request->getBody()->getContents();
             return json_decode($contents, true);
         }, function (RequestException $exception) {
-            return json_decode(json_encode($exception),true);
+            return json_decode(json_encode($exception), true);
         });
         return $promise->wait();
     }

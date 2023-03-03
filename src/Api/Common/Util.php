@@ -1,8 +1,8 @@
 <?php
 
-namespace zmoyi\JuShuiTan\Api\Common;
+namespace gedong\JuShuiTan\Api\Common;
 
-use zmoyi\JuShuiTan\JuShuiTan;
+use gedong\JuShuiTan\JuShuiTan;
 
 class Util
 {

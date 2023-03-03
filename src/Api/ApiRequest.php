@@ -1,11 +1,11 @@
 <?php
 
-namespace zmoyi\JuShuiTan\Api;
+namespace gedong\JuShuiTan\Api;
 
-use zmoyi\JuShuiTan\Api\Common\BaseApi;
-use zmoyi\JuShuiTan\Api\Common\Client;
-use zmoyi\JuShuiTan\Api\Common\ServeHttp;
-use zmoyi\JuShuiTan\Api\Common\Util;
+use gedong\JuShuiTan\Api\Common\BaseApi;
+use gedong\JuShuiTan\Api\Common\Client;
+use gedong\JuShuiTan\Api\Common\ServeHttp;
+use gedong\JuShuiTan\Api\Common\Util;
 
 class ApiRequest extends BaseApi implements ServeHttp
 {
@@ -13,5 +13,4 @@ class ApiRequest extends BaseApi implements ServeHttp
     {
         return Client::post($serveHttp, Util::getParams($this->getConfig()['app_Secret'], $params));
     }
-
 }

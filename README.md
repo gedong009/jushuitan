@@ -1,6 +1,6 @@
 # 聚水潭 php SDK
 
-[![Latest Stable Version](http://poser.pugx.org/zmoyi/jushuitan/v)](https://packagist.org/packages/zmoyi/jushuitan) [![Total Downloads](http://poser.pugx.org/zmoyi/jushuitan/downloads)](https://packagist.org/packages/zmoyi/jushuitan) [![Latest Unstable Version](http://poser.pugx.org/zmoyi/jushuitan/v/unstable)](https://packagist.org/packages/zmoyi/jushuitan) [![License](http://poser.pugx.org/zmoyi/jushuitan/license)](https://packagist.org/packages/zmoyi/jushuitan) [![PHP Version Require](http://poser.pugx.org/zmoyi/jushuitan/require/php)](https://packagist.org/packages/zmoyi/jushuitan)
+[![Latest Stable Version](http://poser.pugx.org/gedong/jushuitan/v)](https://packagist.org/packages/gedong/jushuitan) [![Total Downloads](http://poser.pugx.org/gedong/jushuitan/downloads)](https://packagist.org/packages/gedong/jushuitan) [![Latest Unstable Version](http://poser.pugx.org/gedong/jushuitan/v/unstable)](https://packagist.org/packages/gedong/jushuitan) [![License](http://poser.pugx.org/gedong/jushuitan/license)](https://packagist.org/packages/gedong/jushuitan) [![PHP Version Require](http://poser.pugx.org/gedong/jushuitan/require/php)](https://packagist.org/packages/gedong/jushuitan)
 
 聚水潭的php-sdk
 
@@ -10,7 +10,7 @@
 ## 安装
 
 ```composer
-composer require zmoyi/jushuitan 
+composer require gedong/jushuitan 
 ```
 
 ## 配置以及使用
@@ -30,8 +30,8 @@ $config = [
 ### api调用
 
 ```php
-use zmoyi\JuShuiTan\Api\ApiRequest;
-use zmoyi\JuShuiTan\Api\Common\ServeHttp;
+use gedong\JuShuiTan\Api\ApiRequest;
+use gedong\JuShuiTan\Api\Common\ServeHttp;
 
 $data = [
     'shop_id' => '123456'
@@ -46,7 +46,7 @@ $response = $apiRequest->request(ServeHttp::QUERY_SKUMAP,$data);
 
 ### auth调用
 ```php
-use zmoyi\JuShuiTan\Auth\Auth;
+use gedong\JuShuiTan\Auth\Auth;
 /**
 * config同上
  */
@@ -73,7 +73,7 @@ $refToken = $Auth->refreshToken($accessToken);
 /**
 * 调用示例
  */
- \zmoyi\JuShuiTan\Api\Common\ServeHttp::QUERY_AFTERSALE_RECEIVED;
+ \gedong\JuShuiTan\Api\Common\ServeHttp::QUERY_AFTERSALE_RECEIVED;
   /**
      * 基础API路由
      */
