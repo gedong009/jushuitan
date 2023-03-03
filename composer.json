@@ -1,7 +1,10 @@
 {
-  "name": "zmoyi/jushuitan",
+  "name": "gedong/jushuitan",
   "description": "聚水潭-php-sdk",
-  "keywords": ["JuShuiTan", "ERP"],
+  "keywords": [
+    "JuShuiTan",
+    "ERP"
+  ],
   "type": "library",
   "require": {
     "php": ">=7.4.3",
@@ -16,8 +19,8 @@
   },
   "authors": [
     {
-      "name": "墨子熙",
-      "email": "zmszm666@163.com"
+      "name": "葛栋",
+      "email": "gedong009@qq.com"
     }
   ],
   "minimum-stability": "dev"
