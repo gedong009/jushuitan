@@ -25,7 +25,7 @@ class Auth extends BaseApi
             'timestamp' => time(),
             'charset' => $this->getConfig()['charset']
         ];
-        $sign = Util::getSign($this->getConfig()['app_Secret'],$data);
+        $sign = Util::getSign($this->getConfig()['app_Secret'], $data);
         return $this->getConfig()['authUrl'] .
             '?app_key=' . $data['app_key'] .
             '&timestamp=' . $data['timestamp'] .
@@ -51,8 +51,8 @@ class Auth extends BaseApi
             'charset' => $this->getConfig()['charset'],
             'code' => $code,
         ];
-        $data['sign'] = Util::getSign($this->getConfig()['app_Secret'],$data);
-        return Client::post($this->getAccessTokenUrl, $data);
+        $data['sign'] = Util::getSign($this->getConfig()['app_Secret'], $data);
+        return Client::post($this->getConfig()['baseUrl'] . $this->getAccessTokenUrl, $data);
     }
 
     /**
@@ -74,7 +74,7 @@ class Auth extends BaseApi
             'scope' => 'all',
         ];
 
-        $data['sign'] = Util::getSign($this->getConfig()['app_Secret'],$data);
-        return Client::post($this->refreshTokenUrl, $data);
+        $data['sign'] = Util::getSign($this->getConfig()['app_Secret'], $data);
+        return Client::post($this->getConfig()['baseUrl'] . $this->refreshTokenUrl, $data);
     }
 }

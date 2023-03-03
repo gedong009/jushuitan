@@ -43,13 +43,13 @@ class JuShuiTan
      * 定义获取access—token Url
      * @var string
      */
-    protected string $getAccessTokenUrl = 'https://openapi.jushuitan.com/openWeb/auth/accessToken';
+    protected string $getAccessTokenUrl = '/openWeb/auth/accessToken';
 
     /**
      * 定义refresh-token地址
      * @var string
      */
-    protected string $refreshTokenUrl = 'https://openapi.jushuitan.com/openWeb/auth/refreshToken';
+    protected string $refreshTokenUrl = '/openWeb/auth/refreshToken';
 
     /**
      * 获取config配置
@@ -67,8 +67,9 @@ class JuShuiTan
      */
     public function setConfig(array $config): JuShuiTan
     {
-        if (isset($config['app_Key'], $config['app_Secret'], $config['baseUrl'],$config['access_token'])) {
+        if (isset($config['app_Key'], $config['app_Secret'], $config['baseUrl'], $config['access_token'])) {
             $this->config['access_token'] = $config['access_token'];
+            $this->config['authUrl'] = $config['authUrl'];
             $this->config['baseUrl'] = $config['baseUrl'];
             $this->config['app_Key'] = $config['app_Key'];
             $this->config['app_Secret'] = $config['app_Secret'];
@@ -90,15 +91,15 @@ class JuShuiTan
      */
     public function setPublicRequestParams(): JuShuiTan
     {
-        if (isset($this->getConfig()['app_Key'], $this->getConfig()['access_token'])){
+        if (isset($this->getConfig()['app_Key'], $this->getConfig()['access_token'])) {
             $this->publicRequestParams = [
-               'app_key' => $this->config['app_Key'],
-               'access_token' =>  $this->config['access_token'],
-               'timestamp' => time(),
-               'charset' => $this->config['charset'],
-               'version' => $this->config['version'],
-           ];
+                'app_key' => $this->config['app_Key'],
+                'access_token' =>  $this->config['access_token'],
+                'timestamp' => time(),
+                'charset' => $this->config['charset'],
+                'version' => $this->config['version'],
+            ];
         }
-       return $this;
+        return $this;
     }
 }
